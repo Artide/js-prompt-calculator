@@ -1,0 +1,606 @@
+
+<html>
+<head>
+	<title>Basic Calculator || 1.0 beta</title>
+</head>
+<body>
+<style type="text/css">
+	body
+	{
+		background: #000000;
+	}
+	h1
+	{
+		color: #00FFFF;
+		font-family: comic sans, comic sans ms, cursive, verdana, arial, sans-serif;
+	}
+	#math1
+	{
+		color: cyan;
+		font-family: comic sans, comic sans ms, cursive, verdana, arial, sans-serif;
+	}
+	#add
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#sub
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#div
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#mul
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#exp
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#dis
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#pyt
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#sqr
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#pow
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	#fip
+	{
+		-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+	}
+	/*#var
+	{
+		border-color: 747475;
+		border-radius: 4px;
+		background-color: green;
+	}
+	*/
+</style>
+	<h1>Basic Calculator - 1.0 beta</h1>
+	<script type="text/javascript">
+	var FIND_A = 0;
+	var FIND_B = 1;
+	var FIND_C = 2;
+	var PR_1 = 0;
+	var PR_2 = 1;
+	var PR_3 = 2;
+	var PR_4 = 3;
+	var num1;
+	var num2;
+	var num3;
+	var num4;
+	var used = 0;
+	var rN = 0;
+	var rs = [];
+	var show = false;
+
+	function distanceFormula(x1, y1, x2, y2)
+	{
+		var d1 = y2 - y1;
+		var d2 = x2 - x1;
+		var next = d1 * d1 + d2 * d2;
+		var final = Math.sqrt(next);
+
+		return final;
+	}
+	function pythagoreanTheorem(a, b, c, mode)//what you're looking for Richard
+	{
+		switch(mode)
+		{
+			case FIND_A:
+				var py1 = Math.sqrt(b);
+				var py2 = Math.sqrt(c);
+				var next = py2 - py1;
+				var final = Math.sqrt(next);
+
+				return final;
+			break;
+			case FIND_B:
+				var py1 = Math.sqrt(a);
+				var py2 = Math.sqrt(c);
+				var next = py2 - py1;
+				var final = Math.sqrt(next);
+
+				return final;
+			break;
+			case FIND_C:
+				var py1 = a * a + b * b;
+				var final = Math.sqrt(py1);
+
+				return final;
+		    break;
+		}
+	}
+	/**
+	function fractionPercentage(first, second, third, fourth, mode)
+	{
+		switch(mode)
+		{
+			case PR_1:
+				var pr1 = second * third / fourth;
+
+				return pr1;
+			break;
+			case PR_2:
+				var pr2 = first * fourth / third;
+
+				return pr2;
+			break;
+			case PR_3:
+				var pr3 = first * fourth / second;
+
+				return pr3;
+			break;
+			case PR_4:
+				var pr4 = second * third / first;
+
+				return pr4;
+			break;
+		}
+	}
+	*/
+	function add(first, second)
+	{
+		return Number(first) + Number(second);
+	}
+	function multiply(first, second)
+	{
+		return first * second;
+	}
+	function divide(first, second)
+	{
+		return first / second;
+	}
+	function subtract(first, second)
+	{
+		return first - second;
+	}
+	function exponent(first, second)
+	{
+		return Math.pow(first, second);
+	}
+	function square(number)
+	{
+		return Math.sqrt(number);
+	}
+	function power3(number)
+	{
+		return Math.cbrt(number);
+	}
+	function findPercentage(number, percentage)
+	{
+		return (percentage / 100) * number;
+	}
+
+	//##############################################################################################################//
+
+	function a1()
+	{
+		document.getElementById("times").innerHTML = used;
+		var answer;
+			num1 = prompt("First number");
+			num2 = prompt("Second number");
+			answer = add(num1, num2);
+			alert(num1 + " + " + num2 + " = " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function m1()
+	{
+		document.getElementById("times").innerHTML = used;
+		num1 = prompt("First number");
+			num2 = prompt("Second number");
+			answer = multiply(num1, num2);
+			alert(num1 + " * " + num2 + " = " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function sq1()
+	{
+		document.getElementById("times").innerHTML = used;
+		num1 = prompt("Enter number");
+			answer = square(num1);
+			alert("square of " + num1 + " is " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function e1()
+	{
+		document.getElementById("times").innerHTML = used;
+		num1 = prompt("Enter base");
+			num2 = prompt("Enter exponent");
+			answer = exponent(num1, num2);
+			alert("Value is " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function s1()
+	{
+		document.getElementById("times").innerHTML = used;
+		num1 = prompt("First number");
+			num2 = prompt("Second number");
+			answer = subtract(num1, num2);
+			alert(num1 + " - " + num2 + " = " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function di1()
+	{		
+		document.getElementById("times").innerHTML = used;
+		num1 = prompt("First number");
+			num2 = prompt("Second number");
+			answer = divide(num1, num2);
+			alert(num1 + " / " + num2 + " = " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function d1()
+	{
+		document.getElementById("times").innerHTML = used;
+		num1 = prompt("Enter value of x1");
+			num2 = prompt("Enter value of y1");
+			num3 = prompt("Enter value of x2");
+			num4 = prompt("Enter value of y2");
+			answer = distanceFormula(num1, num2, num3, num4);
+
+			alert("The value is " + answer);
+			used++;
+			rN++;
+			rs.push(rN + answer + "\n");
+	}
+
+	function py1()
+	{
+		document.getElementById("times").innerHTML = used;
+		var fp = prompt("What are you finding? (a, b, c)");
+			if(fp === "c")
+			{
+				num1 = prompt("Enter value of A");
+				num2 = prompt("Enter value of B");
+				var answer = pythagoreanTheorem(num1, num2, 0, FIND_C);
+
+				alert("Value of C is " + answer);
+				used++;
+				rN++;
+				rs.push(rN + answer + "\n");
+			}
+			if(fp === "a")
+			{
+				num1 = prompt("Enter value of B");
+				num2 = prompt("Enter value of C");
+				var answer = pythagoreanTheorem(0, num1, num2, FIND_A);
+
+				alert("Value of A is " + answer);
+				used++;
+				rN++;
+				rs.push(rN + answer + "\n");
+			}
+			if(fp === "b")
+			{
+				num1 = prompt("Enter value of A");
+				num2 = prompt("Enter value of C");
+				var answer = pythagoreanTheorem(num1, 0, num2, FIND_B);
+
+				alert("Value of B is " + answer);
+				used++;
+				rN++;
+				rs.push(rN + answer + "\n");
+			}
+			if(fp !== "a" || fp !== "b" || fp !== "c"){
+				alert("Sorry, but I did not understand `" + fp + "`. Try again.\n If this keeps happening please contact me by gmail: angelm701.2@gmail.com")
+			}
+	}
+	function p3()
+	{
+		document.getElementById("times").innerHTML = used;
+		used++;
+		rN++;
+		var number = prompt("Enter number");
+		var answer = power3(number);
+		alert("The value is " + answer);
+		rs.push(rN + answer + "\n");
+	}
+	function fp()
+	{
+		document.getElementById("times").innerHTML = used;
+		used++;
+		rN++;
+		var number = prompt("Enter the number that you want to find the percentage from");
+		var number2 = prompt("Enter the percentage you want to find");
+		var answer = findPercentage(number2, number);
+		alert(number2 + "% of " + number + " is " + answer);
+		rs.push(rN + answer + "\n");
+	}
+	function error()
+	{
+		return "Unknown error occurred.";
+	}
+
+	//##############################################################################################################//
+
+	function viewAllResults()
+	{
+		for(var r = 0; r < rs.length; r++){
+			document.getElementById("res").innerHTML = "Latest Answer<br/>-------------------<br/>" + rs[r] + "<br/>";
+		}
+	}
+	function getRandomColor() {
+    	var letters = '0123456789ABCDEF'.split('');
+    	var color = '#';
+    	for (var i = 0; i < 6; i++ ) {
+    	    color += letters[Math.floor(Math.random() * 16)];
+    	}
+    	return color;
+	}
+	function changeAnswerColor()
+	{
+		document.getElementById("res").style.color = getRandomColor();
+	}
+	if(rs.length === 0)
+	{
+		var dots = window.setInterval( function() {
+    	var wait = document.getElementById("res");
+    	if (wait.innerHTML.length > 13 || wait.innerHTML === "") {
+        	wait.innerHTML = "No Answers";
+    	}else{
+    		wait.innerHTML += ".";
+    	}
+    	}, 1000);
+	}
+	var resInt = setInterval(changeAnswerColor, 100);
+	setInterval(viewAllResults, 1000);
+	function stopColor()
+	{
+		clearInterval(resInt);
+		document.getElementById("res").style.color = "orange";
+	}
+	/*
+	function resumeColor()
+	{
+		setInterval(changeAnswerColor, 100);
+	}
+	var previousTarget = null;
+	$("res").click(function(){
+    	if(this === previousTarget) {
+        	resumeColor();
+    	}
+    	previousTarget = this;
+    	return false;
+	});
+	*/
+	</script>
+	<center id="math1">
+	Math list:<br/>
+	<ul>
+		<li>
+			distance formula
+		</li>
+		<li>
+			pythagorean
+		</li>
+		<li>
+			fraction percentage (to be added)
+		</li>
+	</ul>
+	The basics:
+	<ul>
+		<li>
+			add
+		</li>
+		<li>
+			multiply
+		</li>
+		<li>
+			divide
+		</li>
+		<li>
+			subtract
+		</li>
+		<li>
+			square
+		</li>
+		<li>
+			exponent
+		</li>
+		<li>
+			Cube root
+		</li>
+		<li>
+			Percentage!
+		</li>
+	</ul>
+	<ul>
+	<button onclick="a1()" id="add">Add</button>
+	<button onclick="s1()" id="sub">Subtract</button><br/>
+	<button onclick="di1()" id="div">Divide</button>
+	<button onclick="m1()" id="mul">Multiply</button><br/>
+	<button onclick="e1()" id="exp">Exponent</button>
+	<button onclick="d1()" id="dis">Distance Formula</button>
+	<button onclick="py1()" id="pyt">Pythagorean</button><br/>
+	<button onclick="sq1()" id="sqr">Square</button>
+	<button onclick="p3()" id="pow">Cube root</button>
+	<button onclick="fp()" id="fip">Find Percentage</button>
+	</ul><br/>
+	<!--<p><p style="color: red;" onclick="viewAllResults();">[Click Here]</p>to view all your answers!</p><br/>
+	<button onclick="viewAllResults()" id="var">View All My Answers!</button><br/>-->
+	<p id="res" style="font-size: 200%;" onclick="stopColor()"></p><br>
+	NOTE: the times will disappear once you leave or reload the page.<br/>
+	Times used:
+	<p id="times"></p><br/>
+	<p>All Greedits go to: Angel Maya</p>
+	</center>
+</body>
+</html>
