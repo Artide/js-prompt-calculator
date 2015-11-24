@@ -230,9 +230,9 @@
 	var num2;
 	var num3;
 	var num4;
-	var used = 0;
+	var used = 1;
 	var rN = 0;
-	var rs = [];
+	var rs;
 	var show = false;
 
 	function distanceFormula(x1, y1, x2, y2)
@@ -345,7 +345,7 @@
 			alert(num1 + " + " + num2 + " = " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function m1()
@@ -357,7 +357,7 @@
 			alert(num1 + " * " + num2 + " = " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function sq1()
@@ -368,7 +368,7 @@
 			alert("square of " + num1 + " is " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function e1()
@@ -380,7 +380,7 @@
 			alert("Value is " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function s1()
@@ -392,7 +392,7 @@
 			alert(num1 + " - " + num2 + " = " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function di1()
@@ -404,7 +404,7 @@
 			alert(num1 + " / " + num2 + " = " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function d1()
@@ -419,7 +419,7 @@
 			alert("The value is " + answer);
 			used++;
 			rN++;
-			rs.push(rN + answer + "\n");
+			rs = answer;
 	}
 
 	function py1()
@@ -435,7 +435,7 @@
 				alert("Value of C is " + answer);
 				used++;
 				rN++;
-				rs.push(rN + answer + "\n");
+				rs = answer;
 			}
 			if(fp === "a")
 			{
@@ -446,7 +446,7 @@
 				alert("Value of A is " + answer);
 				used++;
 				rN++;
-				rs.push(rN + answer + "\n");
+				rs = answer;
 			}
 			if(fp === "b")
 			{
@@ -457,7 +457,7 @@
 				alert("Value of B is " + answer);
 				used++;
 				rN++;
-				rs.push(rN + answer + "\n");
+				rs = answer;
 			}
 			if(fp !== "a" || fp !== "b" || fp !== "c"){
 				alert("Sorry, but I did not understand `" + fp + "`. Try again.\n If this keeps happening please contact me by gmail: angelm701.2@gmail.com")
@@ -471,7 +471,7 @@
 		var number = prompt("Enter number");
 		var answer = power3(number);
 		alert("The value is " + answer);
-		rs.push(rN + answer + "\n");
+		rs = answer;
 	}
 	function fp()
 	{
@@ -482,7 +482,7 @@
 		var number2 = prompt("Enter the percentage you want to find");
 		var answer = findPercentage(number2, number);
 		alert(number2 + "% of " + number + " is " + answer);
-		rs.push(rN + answer + "\n");
+		rs = answer;
 	}
 	function error()
 	{
@@ -493,9 +493,7 @@
 
 	function viewAllResults()
 	{
-		for(var r = 0; r < rs.length; r++){
-			document.getElementById("res").innerHTML = "Latest Answer<br/>-------------------<br/>" + rs[r] + "<br/>";
-		}
+		document.getElementById("res").innerHTML = "Latest Answer<br/>-------------------<br/>" + rs + "<br/>";
 	}
 	function getRandomColor() {
     	var letters = '0123456789ABCDEF'.split('');
@@ -509,7 +507,8 @@
 	{
 		document.getElementById("res").style.color = getRandomColor();
 	}
-	if(rs.length === 0)
+	/*
+	if(rs.length === null)
 	{
 		var dots = window.setInterval( function() {
     	var wait = document.getElementById("res");
@@ -520,6 +519,7 @@
     	}
     	}, 1000);
 	}
+	*/
 	var resInt = setInterval(changeAnswerColor, 100);
 	setInterval(viewAllResults, 1000);
 	function stopColor()
